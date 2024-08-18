@@ -64,7 +64,7 @@ namespace GeladeiraCodeRDIVersity
         public void RemoverTodosItens()
         {
             _itens.Clear();
-            Console.WriteLine($"Itens removidos dos containers.");
+            Console.WriteLine($"Todos os itens removidos dos containers.");
         }
 
         public bool EstaCheio()
@@ -118,7 +118,5 @@ namespace GeladeiraCodeRDIVersity
         }
     }
 }
-
-
 
 //controla a lista de itens

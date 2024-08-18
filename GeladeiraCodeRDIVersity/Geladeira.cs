@@ -26,7 +26,7 @@
             var container = andar.ObterContainer(numContainer);
 
             if (container == null)
-                throw new Exception("Desculpe, número do container é incorreto!");
+                throw new Exception("Desculpe, número do container está incorreto!");
 
             container.ColocarItem(posicao, item);
         }
