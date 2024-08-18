@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "GeladeiraCodeRDIVersity\Domain.csproj", "{166B97F1-6544-4A35-B832-6DD903363E37}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exibirgeladeira", "..\..\..\Meus projetos de estudos\RDI\ControleDeItens\ControleDeItens\Exibirgeladeira.csproj", "{6FBF0368-0B87-4870-8D52-B04932CF4C09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exibirgeladeira", "..\..\..\Meus projetos de estudos\RDI\ControleDeItens\ControleDeItens\Exibirgeladeira.csproj", "{7F17C1AD-6799-440E-8CB8-3996BA2C6FDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{166B97F1-6544-4A35-B832-6DD903363E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{166B97F1-6544-4A35-B832-6DD903363E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{166B97F1-6544-4A35-B832-6DD903363E37}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6FBF0368-0B87-4870-8D52-B04932CF4C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FBF0368-0B87-4870-8D52-B04932CF4C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6FBF0368-0B87-4870-8D52-B04932CF4C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FBF0368-0B87-4870-8D52-B04932CF4C09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F17C1AD-6799-440E-8CB8-3996BA2C6FDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F17C1AD-6799-440E-8CB8-3996BA2C6FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F17C1AD-6799-440E-8CB8-3996BA2C6FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F17C1AD-6799-440E-8CB8-3996BA2C6FDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
