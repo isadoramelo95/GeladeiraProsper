@@ -25,7 +25,7 @@ namespace GeladeiraCodeRDIVersity
             }
             if (_itens[posicao] == null || _itens[posicao].Id == null)
             {
-                Console.WriteLine($"Essa posição {posicao} está vazia");
+                Console.WriteLine($"Essa posição {posicao} vazia");
                 return;
             }
             _itens[posicao] = null;
@@ -34,14 +34,23 @@ namespace GeladeiraCodeRDIVersity
 
         public void AdicionarItem(int posicao, Item item)
         {
-            _itens.Clear();
-            Console.WriteLine($"Itens removidos dos containers.");
-        }
-
+            if (posicao < 0 || posicao >= limiteItens)
+            {
+                Console.WriteLine("Posição inválida.");
+                return;
+            }
+            if (item == null)
+            {
+                Console.WriteLine("Item inválido.");
+                return;
+            }
             if (_itens[posicao] != null)
-                throw new InvalidOperationException("A posição já está ocupada.");
-
+            {
+                Console.WriteLine($"A posição {posicao} já está ocupada.");
+                return;
+            }
             _itens[posicao] = item;
+            Console.WriteLine($"Item adicionado à posição {posicao}.");
         }
 
         public void AdicionarItens(List<Item> itens)
@@ -67,7 +76,7 @@ namespace GeladeiraCodeRDIVersity
                 var item = _itens[posicao];
                 if (item != null)
                 {
-                    Console.WriteLine($"Posição {posicao}: {item.Alimento}, {item.Quantidade}, {item.Classificacao}");
+                    Console.WriteLine($"Posição {posicao}: {item.Classificacao}");
                 }
             }
         }
@@ -82,6 +91,13 @@ namespace GeladeiraCodeRDIVersity
             return _itens.All(item => item == null || item.Id == null);
         }
 
+        public void EsvaziarGeladeira()
+        {
+            _itens.Clear();
+            Console.WriteLine($"Itens removidos dos containers.");
+        }
 
+    }
+}
 
 //controla a lista de itens

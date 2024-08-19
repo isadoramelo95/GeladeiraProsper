@@ -20,38 +20,31 @@
             return _andares[numAndar];
         }
 
-        public void AdicionarItemGeladeira(int numAndar, int numContainer, int posicao, Item item)
+        public void AdicionarItem(int numAndar, int numContainer, int? posicao, List<Item> itens)
         {
             var andar = ObterAndar(numAndar);
-            var container = andar?.ObterContainer(numContainer);
+            var container = andar.ObterContainer(numContainer);
 
             if (container == null)
                 throw new Exception("Desculpe, número do container é incorreto!");
 
-            container.ColocarItem(posicao, item);
-        }
-
-            if (item != null)
+            if (posicao.HasValue)
             {
-                if (posicao >= 0)
-                {
-                    container.AdicionarItem(posicao, item);
-                }
-                else
-                {
-                    if (!container.EstaCheio())
-                    {
-                        container.AdicionarItens(new List<Item> { item });
-                    }
-                    else
-                    {
-                        Console.WriteLine("O container não tem espaço suficiente");
-                    }
-                }
+                if (itens.Count != 1)
+                    throw new ArgumentException("Para adicionar um item específico, a lista de itens deve conter exatamente um item.");
+
+                container.AdicionarItem(posicao.Value, itens[0]);
             }
             else
             {
-                throw new ArgumentNullException(nameof(item), "O item não pode ser nulo.");
+                if (!container.EstaCheio())
+                {
+                    container.AdicionarItens(itens);
+                }
+                else
+                {
+                    Console.WriteLine("O container não tem espaço suficiente");
+                }
             }
         }
         public void RemoverItem(int numAndar, int numContainer, int posicao)
@@ -73,5 +66,4 @@
         }
     }
 }
-
 //gerencia os andares
