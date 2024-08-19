@@ -20,39 +20,50 @@
             return _andares[numAndar];
         }
 
-        public void ColocarItem(int numAndar, int numContainer, int posicao, Item item)
+        public void AdicionarItemGeladeira(int numAndar, int numContainer, int posicao, Item item)
         {
             var andar = ObterAndar(numAndar);
-            var container = andar.ObterContainer(numContainer);
+            var container = andar?.ObterContainer(numContainer);
 
             if (container == null)
-                throw new Exception("Desculpe, número do container está incorreto!");
+                throw new Exception("Desculpe, número do container é incorreto!");
 
             container.ColocarItem(posicao, item);
         }
 
-        public void AdicionarItensAoContainer(int numAndar, int numContainer, List<Item> itens)
-        {
-            var andar = ObterAndar(numAndar);
-            var container = andar.ObterContainer(numContainer);
-
-            if (!container.EstaCheio())
-                container.AdicionarItens(itens);
+            if (item != null)
+            {
+                if (posicao >= 0)
+                {
+                    container.AdicionarItem(posicao, item);
+                }
+                else
+                {
+                    if (!container.EstaCheio())
+                    {
+                        container.AdicionarItens(new List<Item> { item });
+                    }
+                    else
+                    {
+                        Console.WriteLine("O container não tem espaço suficiente");
+                    }
+                }
+            }
             else
             {
-                Console.WriteLine("O container não tem espaço suficiente");
+                throw new ArgumentNullException(nameof(item), "O item não pode ser nulo.");
             }
         }
         public void RemoverItem(int numAndar, int numContainer, int posicao)
         {
             var container = _andares[numAndar].ObterContainer(numContainer);
-            container?.RemoverItem(posicao);
+            container?.RemoverItemDoConatiner(posicao);
         }
 
         public void LimparContainer(int numAndar, int numContainer)
         {
             var container = _andares[numAndar].ObterContainer(numContainer);
-            container?.LimparContainer();
+            container?.EsvaziarGeladeira();
         }
 
         public void ExibirItens()
